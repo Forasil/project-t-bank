@@ -21,22 +21,34 @@ public class Player implements PlayerInterface {
     }
 
     @Override
-    public int changeClife(int clafe) {
-        clife = clife-1;
+    public int changeClife() {
+        clife--;
         return clife;
     }
 
+
     @Override
     public ArrayList<String> addKnowledge(ArrayList<String> bookKnowledge, String knowledge) {
-
+        bookKnowledge.add(knowledge);
         return bookKnowledge;
     }
 
     @Override
-    public void exit(String kluchSlovo) {
-        if (kluchSlovo == "Выход") {
+    public ArrayList<String> lookKnowledge() {
+        return bookKnowledge;
+    }
+
+    @Override
+    public void exit(String keyWord) {
+        if (keyWord.equals("Сдаюсь")) {
+            System.out.println("Вы умерли");
             System.exit(0);
         }
+    }
+
+    @Override
+    public void text(String playerName) {
+        System.out.println(playerName+ ", вы нарушили правило и зашли в опасную зону. За это вы приговориваетесь к казни через повешение. \nУ вас единственная возможность спастись - угадать загаданное слово. Вам даётся 5 жизней. \nСлово угадывается по одной букве. Если вы называете букву неправильно, то теряете одну жизнь. \nПо окончании жизней вы проигрываете. \nЕсли хотите сдаться раньше, напишите: 'Сдаюсь'. \nЕсли хотите попробовать угадать букву, напишите 'Попробовать спастись'. \nЕсли хотите посмотреть набор букв, которые вы вводили, но они не подошли, напишите 'Посмотреть книгу знаний'. \nЕсли хотите посмотреть количество жизней, напишите 'Посмотреть количество жизней'");
     }
 
 }
