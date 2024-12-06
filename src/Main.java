@@ -44,9 +44,11 @@ public class Main {
                     }
                     else {
                         player1.changeClife();
+                        System.out.println("Количество жизней: "+player1.getClife());
                     }
+                    break;
                 case ("Посмотреть количество жизней"):
-                    System.out.println(player1.getClife());
+                    System.out.println("Количество жизней: "+player1.getClife());
                     break;
                 default:
                     System.out.println("Не понимаю что вы хотите сделать. Введите одну из существующих команд");
